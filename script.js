@@ -1,7 +1,7 @@
 // 👉 Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// 🌟 GSAP Animation for Navbar Links (Initial Desktop Load Animation)
+// 🌟 Animate Navbar Links on Desktop Load
 gsap.from(".nav-links li", {
     opacity: 0,
     y: -20,
@@ -9,6 +9,7 @@ gsap.from(".nav-links li", {
     stagger: 0.2
 });
 
+// 🍔 Hamburger Toggle with GSAP Animation
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -18,13 +19,13 @@ hamburger.addEventListener("click", () => {
     if (!isActive) {
         navLinks.classList.add("active");
 
-        // 🎀 Slide in from the right
-        gsap.fromTo(".nav-links", 
+        // 🎀 Slide In Nav
+        gsap.fromTo(navLinks, 
             { x: 300, opacity: 0 }, 
             { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" }
         );
 
-        // ✨ Animate the links
+        // ✨ Animate Each Link
         gsap.from(".nav-links li", {
             opacity: 0,
             x: 50,
@@ -33,21 +34,19 @@ hamburger.addEventListener("click", () => {
             ease: "power2.out"
         });
     } else {
-        // 🎀 Slide out to the right
-        gsap.to(".nav-links", {
+        // 🎀 Slide Out Nav
+        gsap.to(navLinks, {
             x: 300,
             opacity: 0,
             duration: 0.3,
             ease: "power2.in",
             onComplete: () => {
                 navLinks.classList.remove("active");
-                navLinks.style.transform = ""; // reset GSAP transform
-                navLinks.style.opacity = "";   // reset opacity
+                navLinks.removeAttribute("style"); // Reset transform and opacity
             }
         });
     }
 });
-
 
 // ✨ Hero Section Animations
 gsap.from(".text-container h2", {
@@ -65,13 +64,12 @@ gsap.from(".text-container p", {
     ease: "power2.out"
 });
 
-// 🎀 Button Animation
-gsap.fromTo(".btn",
-    { opacity: 0, y: -40 },
+gsap.fromTo(".btn", 
+    { opacity: 0, y: -40 }, 
     { opacity: 1, y: 30, duration: 1, delay: 1, ease: "power2.out" }
 );
 
-// 🌟 Image animations
+// 🌟 Images Slide In
 gsap.from(".image-container.left img", {
     duration: 1,
     x: -100,
@@ -88,7 +86,7 @@ gsap.from(".image-container.right img", {
     ease: "power2.out"
 });
 
-// 💫 Flip Card Animations on Load
+// 💫 Flip Card Load-In
 gsap.from(".flip-card", {
     opacity: 0,
     y: 50,
@@ -116,7 +114,7 @@ gsap.from(".ab1 p", {
 
 // ✨✨✨ Scroll Animations ✨✨✨
 
-// Headings
+// Headings Reveal
 gsap.from(".scroll-fade h2", {
     scrollTrigger: {
         trigger: ".scroll-fade h2",
@@ -129,7 +127,7 @@ gsap.from(".scroll-fade h2", {
     ease: "power2.out"
 });
 
-// Paragraphs
+// Paragraphs Reveal
 gsap.from(".scroll-fade p", {
     scrollTrigger: {
         trigger: ".scroll-fade p",
@@ -143,7 +141,7 @@ gsap.from(".scroll-fade p", {
     ease: "power2.out"
 });
 
-// Scroll-in images
+// Images on Scroll
 gsap.from(".scroll-img", {
     scrollTrigger: {
         trigger: ".scroll-img",
@@ -156,7 +154,7 @@ gsap.from(".scroll-img", {
     ease: "power2.out"
 });
 
-// Reusable Scroll Reveal
+// 🪄 Reusable Reveal Class
 gsap.utils.toArray(".reveal").forEach(el => {
     gsap.from(el, {
         scrollTrigger: {
