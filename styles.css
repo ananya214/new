@@ -463,73 +463,80 @@ body {
         padding: 15px; /* Padding adjustment */
     }
 }
-
 @media (max-width: 600px) {
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  
-    .navbar {
-      height: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 30px;
-      background: #752d2d;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-  
-    .hamburger {
-      display: block;
-      font-size: 24px;
-      color: white;
-      cursor: pointer;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      align-items: center;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #782c2c;
-      z-index: 999;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-in-out;
-    }
-  
-    .nav-links.active {
-      max-height: 300px; /* Adjust if needed */
-    }
-  
-    .nav-links li {
-      list-style: none;
-      width: 100%;
-      text-align: center;
-      padding: 12px 0;
-    }
-  
-    .nav-links li a {
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      display: block;
-      width: 100%;
-    }
-  
-    .nav-links li a:hover {
-      background-color: #6c2424;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  
+
+  body {
+    margin: 0;
+    padding-top: 80px; /* To prevent content hiding behind navbar */
+  }
+
+  .navbar {
+    /* Remove fixed height to let padding decide the height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adjusted padding */
+    background: #752d2d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 60px; /* Space from navbar */
+    left: 0;
+    width: 100%;
+    background-color: #782c2c;
+    z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links.active {
+    max-height: 300px; /* Adjust based on number of links */
+  }
+
+  .nav-links li {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+  }
+
+  .nav-links li a:hover {
+    background-color: #6c2424;
+  }
+}
+
   
   
   
