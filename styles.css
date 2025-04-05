@@ -464,22 +464,10 @@ body {
     }
 }
 @media (max-width: 600px) {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-    padding: 0;
-    margin: 0;
-  }
-
   body {
-    padding-top: 60px; /* Enough space for fixed navbar */
-    background-color: #fff; /* Optional: to avoid seeing gaps */
+    margin: 0;
+    padding-top: 60px; /* Offset for fixed navbar */
+    background-color: #fff;
   }
 
   .navbar {
@@ -517,10 +505,12 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in-out;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-links.active {
-    max-height: 300px; /* Adjust this if needed */
+    max-height: 300px;
   }
 
   .nav-links li {
@@ -528,6 +518,7 @@ body {
     width: 100%;
     text-align: center;
     padding: 12px 0;
+    margin: 0;
   }
 
   .nav-links li a {
@@ -542,6 +533,7 @@ body {
     background-color: #6c2424;
   }
 }
+
 
 
   
