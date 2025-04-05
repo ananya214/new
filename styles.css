@@ -470,21 +470,28 @@ body {
     box-sizing: border-box;
   }
 
-  body {
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0;
     margin: 0;
-    padding-top: 80px; /* To prevent content hiding behind navbar */
+  }
+
+  body {
+    padding-top: 60px; /* Enough space for fixed navbar */
+    background-color: #fff; /* Optional: to avoid seeing gaps */
   }
 
   .navbar {
-    /* Remove fixed height to let padding decide the height */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Adjusted padding */
-    background: #752d2d;
+    padding: 10px 20px;
+    background: #561C24;
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     z-index: 1000;
   }
@@ -501,20 +508,19 @@ body {
     flex-direction: column;
     align-items: center;
     position: fixed;
-    top: 60px; /* Space from navbar */
+    top: 60px;
     left: 0;
+    right: 0;
     width: 100%;
-    background-color: #782c2c;
+    background-color: #561C24;
     z-index: 999;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-in-out;
-    margin: 0;
-    padding: 0;
   }
 
   .nav-links.active {
-    max-height: 300px; /* Adjust based on number of links */
+    max-height: 300px; /* Adjust this if needed */
   }
 
   .nav-links li {
@@ -536,6 +542,7 @@ body {
     background-color: #6c2424;
   }
 }
+
 
   
   
