@@ -317,11 +317,10 @@ body {
   /* For very small screens - show 1 per row */
 
   
-  /* For phones above 400px - show 2 per row */
-  @media (min-width: 400px) and (max-width: 600px) {
+  @media (max-width: 600px) {
     .flip-card-section {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+      grid-template-columns: repeat(2, 1fr); /* Two cards in one row */
       gap: 12px;
       padding: 16px;
     }
@@ -351,14 +350,13 @@ body {
     .button-container button {
       font-size: 0.7rem !important;
       padding: 6px 12px;
-      min-width: auto;
-      max-width: 100%;
+      width: 100%;
       white-space: normal;
       overflow: visible;
-      text-overflow: unset;
       text-align: center;
     }
   }
+  
   
   
   @media (max-width: 600px) {
